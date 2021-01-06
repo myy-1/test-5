@@ -2,7 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ma.supermarket.mapper.UserMapper">
   <select id="findUserByName" parameterType="java.lang.String" resultType="java.lang.Integer">
-        select  count(*)  from user  where uname=#{name}
+        select  count(*)  from user
+        where uname=#{name}
     </select>
   <insert id="insertOne" parameterType="com.ma.supermarket.bean.User">
        insert into user(uname,urole,upassword,address,telephone,realname)
