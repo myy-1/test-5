@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ma.supermarket.mapper.UserMapper">
+  <select id="findUserByName" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select  count(*)  from user  where uname=#{name}
+    </select>
+  <insert id="insertOne" parameterType="com.ma.supermarket.bean.User">
+       insert into user(uname,urole,upassword,address,telephone,realname)
+       values(#{username},#{urole},#{password},#{address},#{telephone},#{realname})
+    </insert>
+  <select id="login" parameterType="com.ma.supermarket.bean.User">
+        select  uname,upassword from user
+        where uname=#{username} and upassword=#{password}
+    </select>
+
+    <select id="selectRole" parameterType="java.lang.Integer">
+     select role_id from user
+     where  urole=#{role}
+    </select>
+
+</mapper>
