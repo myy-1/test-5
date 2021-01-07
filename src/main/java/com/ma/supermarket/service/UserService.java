@@ -18,25 +18,25 @@ public class UserService {
     @Resource
     UserMapper userMapper;
 
-    public BaseResult regist(String name, String role, String password, String address, String telephone, String realname){
-        int i = userMapper.findUserByName(name);
-        if(i>0){
+    public BaseResult regist(User user){
+        String i = userMapper.findUserByName(user.getUname());
+        if(i==null){
             System.out.println("当前昵称已经注册过了");
         }else{
             User user=new User();
-            user.setUsername(name);
-            user.setUrole(role);
-            user.setPassword(password);
-            user.setAddress(address);
-            user.setTelephone(telephone);
-            user.setRealname(realname);
-            userMapper.insertOne(user);
+            user.setUname();
+            user.setUaccount();
+            user.setUrole();
+            user.setPassword();
+            user.setAddress();
+            user.setTelephone();
+            user.setRealname();
         }
         return  BaseResult.success();
     }
 
-    public BaseResult login(String name,String password){
-        User user= (User) userMapper.login(name,password);
+    public BaseResult login(String account,String password){
+        User user= (User) userMapper.login(account,password);
         if(user!=null){
             System.out.println("success");
 

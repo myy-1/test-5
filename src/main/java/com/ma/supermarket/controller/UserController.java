@@ -23,8 +23,8 @@ public class UserController {
     private UserService userService;
     @RequestMapping("/regist")
     @ResponseBody
-    public BaseResult regist(@RequestParam("name") String name, @RequestParam("role") String role, @RequestParam("password") String password, @RequestParam("address") String address, @RequestParam("telephone") String telephone, @RequestParam("realname") String realname){
-        return userService.regist(name, role, password, address, telephone, realname);
+    public BaseResult regist(@RequestParam("name") String username, @RequestParam("role") String role, @RequestParam("password") String password, @RequestParam("address") String address, @RequestParam("telephone") String telephone, @RequestParam("realname") String realname){
+        return userService.regist(username, role, password, address, telephone, realname);
 
     }
     @RequestMapping("/login")

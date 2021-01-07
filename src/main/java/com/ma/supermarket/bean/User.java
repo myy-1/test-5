@@ -9,22 +9,55 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;//用户id
+    private String uname;//用户姓名
+    private String uaccount;//帐号
+    private String password;//密码
+    private  int urole;//用户角色0:管理员1:超市管理员2:学生
+    private  String address;//用户地址
+    private String telephone;//用户电话
+    private String realname;//用户真实姓名
+    private int role_id;//用户角色id
 
-    private Long id;
+    public int getId() {
+        return id;
+    }
 
-    private String username;
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    private  String urole;
+    public String getUname() {
+        return uname;
+    }
 
-    private String password;
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
 
-    private  String address;
+    public String getUaccount() {
+        return uaccount;
+    }
 
-    private String telephone;
+    public void setUaccount(String uaccount) {
+        this.uaccount = uaccount;
+    }
 
-    private String realname;
+    public String getPassword() {
+        return password;
+    }
 
-    private Long role_id;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getUrole() {
+        return urole;
+    }
+
+    public void setUrole(int urole) {
+        this.urole = urole;
+    }
 
     public String getAddress() {
         return address;
@@ -50,43 +83,11 @@ public class User {
         this.realname = realname;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getUrole() {
-        return urole;
-    }
-
-    public void setUrole(String urole) {
-        this.urole = urole;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Long getRole_id() {
+    public int getRole_id() {
         return role_id;
     }
 
-    public void setRole_id(Long role_id) {
+    public void setRole_id(int role_id) {
         this.role_id = role_id;
     }
 }

@@ -5,13 +5,13 @@
         select  count(*)  from user
         where uname=#{name}
     </select>
-  <insert id="insertOne" parameterType="com.ma.supermarket.bean.User">
-       insert into user(uname,urole,upassword,address,telephone,realname)
-       values(#{username},#{urole},#{password},#{address},#{telephone},#{realname})
+  <insert id="regist" parameterType="com.ma.supermarket.bean.User">
+       insert into user(uname,uaccount,upassword,urole,address,telephone,realname)
+       values(#{uname},#{uaccount},#{upassword},#{urole},#{address},#{telephone},#{realname})
     </insert>
   <select id="login" parameterType="com.ma.supermarket.bean.User">
-        select  uname,upassword from user
-        where uname=#{username} and upassword=#{password}
+        select  uaccount,upassword from user
+        where uaccount=#{account} and upassword=#{password}
     </select>
 
     <select id="selectRole" parameterType="java.lang.Integer">
