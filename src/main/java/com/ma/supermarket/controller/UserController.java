@@ -23,15 +23,12 @@ public class UserController {
     private UserService userService;
     @RequestMapping("/regist")
     @ResponseBody
-    public BaseResult regist(@RequestParam("name") String username, @RequestParam("role") String role, @RequestParam("password") String password, @RequestParam("address") String address, @RequestParam("telephone") String telephone, @RequestParam("realname") String realname){
-        return userService.regist(username, role, password, address, telephone, realname);
-
+    public BaseResult regist(User user){
+        return userService.regist(user);
     }
     @RequestMapping("/login")
     @ResponseBody
-    public BaseResult login(String name,String password){
-        return userService.login(name,password);
-
-
+    public BaseResult login(String account,String password,int urole){
+        return userService.login(account,password,urole);
     }
 }

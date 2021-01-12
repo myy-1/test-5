@@ -12,12 +12,12 @@ public class User {
     private int id;//用户id
     private String uname;//用户姓名
     private String uaccount;//帐号
-    private String password;//密码
+    private String upassword;//密码
     private  int urole;//用户角色0:管理员1:超市管理员2:学生
     private  String address;//用户地址
     private String telephone;//用户电话
     private String realname;//用户真实姓名
-    private int role_id;//用户角色id
+    private int role_id;//用户角色id 0:管理员1:超市管理员 2:学生
 
     public int getId() {
         return id;
@@ -43,12 +43,12 @@ public class User {
         this.uaccount = uaccount;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUpassword() {
+        return upassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUpassword(String upassword) {
+        this.upassword = upassword;
     }
 
     public int getUrole() {
