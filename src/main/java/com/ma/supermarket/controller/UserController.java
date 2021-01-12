@@ -19,13 +19,33 @@ import javax.annotation.Resource;
  */
 @RestController
 public class UserController {
+
     @Resource
     private UserService userService;
+
+    /**
+     * 注册
+     * @param user
+     * @return
+     */
     @RequestMapping("/regist")
+    /**
+     * 将返回结果封装成json
+     */
     @ResponseBody
     public BaseResult regist(User user){
         return userService.regist(user);
     }
+
+    /**
+     * 登录
+     *
+     * todo mayueyue 登录有报错
+     * @param account
+     * @param password
+     * @param urole
+     * @return
+     */
     @RequestMapping("/login")
     @ResponseBody
     public BaseResult login(String account,String password,int urole){
